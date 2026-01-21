@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-G9KZWPPT7V"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -9,14 +12,32 @@
 
       gtag('config', 'G-G9KZWPPT7V');
     </script>
-    
+
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2689474284772231');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=2689474284772231&ev=PageView&noscript=1"
+    /></noscript>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diyneza | Smart Restaurant Management</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <meta name="description" content="Diyneza is the all-in-one restaurant management software built to streamline operations, boost profits, and bring calm to your kitchen.">
+    
     <script src="https://cdn.tailwindcss.com"></script>
+    
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
     <script>
         tailwind.config = {
             theme: {
@@ -70,8 +91,8 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 md:h-20 items-center">
                 <a href="#" class="flex items-center gap-2 md:gap-3 group">
-                    <img class="h-10 md:h-11 w-auto transition-transform transform group-hover:scale-105" src="diyneza_logo.png" alt="Diyneza Logo">
-                    </a>
+                    <img class="h-10 md:h-11 w-auto transition-transform transform group-hover:scale-105" src="diyneza_logo.png" alt="Diyneza Logo" width="150" height="44" fetchpriority="high">
+                </a>
                 
                 <div class="hidden md:flex space-x-10 items-center font-medium text-sm">
                     <a href="#why-us" class="text-gray-600 hover:text-brand-primary transition">Why Us</a>
@@ -158,7 +179,7 @@
                 </div>
                 <div class="relative order-1 md:order-2 h-[300px] md:h-[500px]">
                     <div class="absolute inset-0 bg-brand-primary transform rotate-3 rounded-[2.5rem] opacity-[0.08]"></div>
-                    <img src="kitchen.png" alt="Smart Kitchen with Chefs" class="w-full h-full object-cover rounded-[2rem] md:rounded-[2.5rem] shadow-2xl relative z-10 border-4 border-white">
+                    <img src="kitchen.png" alt="Smart Kitchen with Chefs" class="w-full h-full object-cover rounded-[2rem] md:rounded-[2.5rem] shadow-2xl relative z-10 border-4 border-white" loading="lazy" width="600" height="800">
                 </div>
             </div>
         </div>
