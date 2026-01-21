@@ -1,43 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G9KZWPPT7V"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-G9KZWPPT7V');
-    </script>
-
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '2689474284772231');
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=2689474284772231&ev=PageView&noscript=1"
-    /></noscript>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diyneza | Smart Restaurant Management</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <meta name="description" content="Diyneza is the all-in-one restaurant management software built to streamline operations, boost profits, and bring calm to your kitchen.">
     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    
     <script>
         tailwind.config = {
             theme: {
@@ -60,25 +34,39 @@
             }
         }
     </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2689474284772231');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=2689474284772231&ev=PageView&noscript=1"
+    /></noscript>
     <style>
-        /* Glass effect for navbar */
+        /* CSS optimizations */
         .glass-nav {
             background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
         }
-        /* Better mobile spacing for form elements */
-        input, textarea {
-            font-size: 16px; /* Prevents iOS zoom on focus */
-        }
-        /* Loading spinner animation */
+        input, textarea { font-size: 16px; }
         .loader {
             border: 3px solid #f3f3f3;
             border-radius: 50%;
             border-top: 3px solid #E88D35;
             width: 24px;
             height: 24px;
-            -webkit-animation: spin 1s linear infinite; /* Safari */
+            -webkit-animation: spin 1s linear infinite;
             animation: spin 1s linear infinite;
         }
         @-webkit-keyframes spin { 0% { -webkit-transform: rotate(0deg); } 100% { -webkit-transform: rotate(360deg); } }
@@ -91,7 +79,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 md:h-20 items-center">
                 <a href="#" class="flex items-center gap-2 md:gap-3 group">
-                    <img class="h-10 md:h-11 w-auto transition-transform transform group-hover:scale-105" src="diyneza_logo.png" alt="Diyneza Logo" width="150" height="44" fetchpriority="high">
+                    <img class="h-10 md:h-11 w-auto transition-transform transform group-hover:scale-105" src="diyneza_logo.png" alt="Diyneza Logo" width="150" height="44">
                 </a>
                 
                 <div class="hidden md:flex space-x-10 items-center font-medium text-sm">
@@ -179,7 +167,7 @@
                 </div>
                 <div class="relative order-1 md:order-2 h-[300px] md:h-[500px]">
                     <div class="absolute inset-0 bg-brand-primary transform rotate-3 rounded-[2.5rem] opacity-[0.08]"></div>
-                    <img src="kitchen.webp" alt="Smart Kitchen with Chefs" class="w-full h-full object-cover rounded-[2rem] md:rounded-[2.5rem] shadow-2xl relative z-10 border-4 border-white" loading="lazy" width="600" height="800">
+                    <img src="kitchen.webp" alt="Smart Kitchen with Chefs" class="w-full h-full object-cover rounded-[2rem] md:rounded-[2.5rem] shadow-2xl relative z-10 border-4 border-white" width="600" height="800" decoding="async">
                 </div>
             </div>
         </div>
@@ -315,6 +303,14 @@
         </div>
     </footer>
 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G9KZWPPT7V"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-G9KZWPPT7V');
+    </script>
+
     <script>
         // *** IMPORTANT: REPLACE THE URL BELOW WITH YOUR GOOGLE WEB APP URL ***
         const scriptURL = 'https://script.google.com/macros/s/AKfycbzcf_haMUl6hfzFv8isA9i-D2ZFoVGi4AU2OgVM57qHV-2KP9QtKk0AsGuETVLoculT/exec';
@@ -355,4 +351,3 @@
 
 </body>
 </html>
-
