@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features | Diyneza</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: { dark: '#4E3629', primary: '#E88D35', light: '#FFFDF5', surface: '#FDF6EB' }
+                    },
+                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G9KZWPPT7V"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-G9KZWPPT7V');
+    </script>
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2689474284772231');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2689474284772231&ev=PageView&noscript=1" /></noscript>
+</head>
+<body class="bg-brand-light text-brand-dark antialiased">
+
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-orange-100/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition">
+                    <img class="h-11 w-auto" src="diyneza_logo.png" alt="Diyneza Logo" width="150" height="44">
+                </a>
+                <div class="hidden md:flex space-x-8 font-medium text-sm">
+                    <a href="why-us.html" class="text-gray-600 hover:text-brand-primary transition">Why Us</a>
+                    <a href="features.html" class="text-brand-primary font-bold transition">Features</a>
+                    <a href="contact.html" class="bg-brand-dark text-white px-6 py-3 rounded-full hover:bg-brand-primary transition">Book a Demo</a>
+                </div>
+                 <div class="md:hidden">
+                    <a href="contact.html" class="bg-brand-primary text-white px-4 py-2 rounded-full text-sm font-bold">Book Demo</a>
+                 </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="pt-32 pb-16 text-center px-4">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-brand-dark mb-4">Complete Restaurant OS</h1>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">From the front-of-house to the back-office, every module talks to each other.</p>
+    </header>
+
+    <section class="pb-24 px-4">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <div class="bg-white p-8 rounded-[2rem] shadow-sm border border-transparent hover:border-orange-100 transition h-full">
+                <div class="h-14 w-14 bg-orange-100 rounded-2xl flex items-center justify-center text-3xl mb-6">🍽️</div>
+                <h3 class="text-2xl font-bold mb-4">Kitchen Display System</h3>
+                <p class="text-gray-600 leading-relaxed">Orders flash on kitchen screens instantly. Chefs can mark items 'Preparing' or 'Ready', syncing status with waiters immediately.</p>
+            </div>
+
+            <div class="bg-brand-dark text-white p-8 rounded-[2rem] shadow-xl relative overflow-hidden h-full">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-white opacity-10 rounded-full -mr-10 -mt-10 blur-2xl"></div>
+                <div class="h-14 w-14 bg-white/10 rounded-2xl flex items-center justify-center text-3xl mb-6 relative z-10">📱</div>
+                <h3 class="text-2xl font-bold mb-4 relative z-10">Owner's Dashboard</h3>
+                <p class="text-gray-300 leading-relaxed relative z-10">The command center in your pocket. Track real-time sales, modify menu pricing remotely, and get daily P&L reports sent to your phone.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-[2rem] shadow-sm border border-transparent hover:border-orange-100 transition h-full">
+                <div class="h-14 w-14 bg-orange-100 rounded-2xl flex items-center justify-center text-3xl mb-6">📦</div>
+                <h3 class="text-2xl font-bold mb-4">Live Inventory</h3>
+                <p class="text-gray-600 leading-relaxed">Recipe-based deduction means when you sell a Burger, the system subtracts 1 Bun and 1 Patty. Get alerts before you run out.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-[2rem] shadow-sm border border-transparent hover:border-orange-100 transition h-full">
+                <div class="h-14 w-14 bg-orange-100 rounded-2xl flex items-center justify-center text-3xl mb-6">👥</div>
+                <h3 class="text-2xl font-bold mb-4">Staff Management</h3>
+                <p class="text-gray-600 leading-relaxed">Shift scheduling, attendance tracking, and performance analytics. Know exactly who your top sellers are.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-[2rem] shadow-sm border border-transparent hover:border-orange-100 transition h-full">
+                <div class="h-14 w-14 bg-orange-100 rounded-2xl flex items-center justify-center text-3xl mb-6">💳</div>
+                <h3 class="text-2xl font-bold mb-4">Smart POS</h3>
+                <p class="text-gray-600 leading-relaxed">Lightning fast billing. Split checks, manage table transfers, and handle discounts without a calculator.</p>
+            </div>
+
+            <div class="bg-brand-surface p-8 rounded-[2rem] shadow-inner border border-orange-100 transition h-full flex flex-col justify-center text-center">
+                <h3 class="text-xl font-bold mb-2 text-brand-primary">API Ready</h3>
+                <p class="text-brand-dark font-medium">Connects with Zomato & Swiggy</p>
+                <p class="text-sm text-gray-500 mt-2">(Coming in Update v2.0)</p>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="bg-brand-dark text-white py-12 text-center">
+        <h2 class="text-2xl font-bold mb-6">Ready to see it in action?</h2>
+        <a href="contact.html" class="bg-brand-primary text-white px-8 py-4 rounded-xl font-bold hover:bg-orange-600 transition inline-block">Book Your Demo</a>
+        <p class="text-sm text-orange-100/50 mt-12">&copy; 2026 Diyneza Technologies. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
