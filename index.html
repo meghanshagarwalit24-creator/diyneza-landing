@@ -3,127 +3,415 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Why Us | Diyneza</title>
+    <title>Diyneza | Smart Restaurant Management</title>
     <link rel="icon" type="image/png" href="favicon.png">
+    <meta name="description" content="Diyneza is the all-in-one restaurant management software built to streamline operations, boost profits, and bring calm to your kitchen.">
+    
+    <link rel="preload" as="image" href="kitchen.webp">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
     <style>
-        :root { --brand-dark: #4E3629; --brand-primary: #E88D35; --brand-light: #FFFDF5; --brand-surface: #FDF6EB; --text-gray: #4b5563; --white: #ffffff; }
+        :root {
+            --brand-dark: #4E3629;
+            --brand-primary: #E88D35;
+            --brand-light: #FFFDF5;
+            --brand-surface: #FDF6EB;
+            --text-gray: #4b5563;
+            --white: #ffffff;
+        }
+
         * { box-sizing: border-box; margin: 0; padding: 0; }
+        
         html { scroll-behavior: smooth; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--brand-light); color: var(--brand-dark); line-height: 1.5; -webkit-font-smoothing: antialiased; }
-        .container { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--brand-light);
+            color: var(--brand-dark);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- Utilities --- */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
         a { text-decoration: none; color: inherit; transition: 0.2s; }
-        .btn { display: inline-block; padding: 0.875rem 2rem; border-radius: 9999px; font-weight: 700; cursor: pointer; border: none; transition: transform 0.1s; }
-        .btn-primary { background-color: var(--brand-primary); color: var(--white); box-shadow: 0 10px 15px -3px rgba(232, 141, 53, 0.3); }
+        
+        /* --- Buttons --- */
+        .btn {
+            display: inline-block;
+            padding: 0.875rem 2rem;
+            border-radius: 9999px;
+            font-weight: 700;
+            cursor: pointer;
+            border: none;
+            transition: transform 0.1s, box-shadow 0.2s;
+        }
+        .btn-primary {
+            background-color: var(--brand-primary);
+            color: var(--white);
+            box-shadow: 0 10px 15px -3px rgba(232, 141, 53, 0.3);
+        }
         .btn-primary:hover { background-color: #d67d26; transform: translateY(-2px); }
-        nav { position: fixed; width: 100%; z-index: 50; top: 0; background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(232, 141, 53, 0.1); }
-        .nav-inner { display: flex; justify-content: space-between; align-items: center; height: 80px; }
+        
+        .btn-outline {
+            background-color: var(--white);
+            color: var(--brand-dark);
+            border: 2px solid #e5e7eb;
+        }
+        .btn-outline:hover { border-color: var(--brand-primary); color: var(--brand-primary); }
+
+        /* --- Navigation --- */
+        nav {
+            position: fixed;
+            width: 100%;
+            z-index: 50;
+            top: 0;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(232, 141, 53, 0.1);
+        }
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
         .nav-links { display: flex; gap: 2.5rem; align-items: center; font-weight: 500; font-size: 0.95rem; }
-        .nav-links a:hover, .active-link { color: var(--brand-primary); }
+        .nav-links a:hover { color: var(--brand-primary); }
         .mobile-btn { display: none; }
+
+        /* --- Header / Hero --- */
+        header {
+            padding-top: 10rem;
+            padding-bottom: 6rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-blob {
+            position: absolute;
+            top: -5rem;
+            right: -5rem;
+            width: 40rem;
+            height: 40rem;
+            background-color: var(--brand-primary);
+            opacity: 0.04;
+            border-radius: 50%;
+            filter: blur(60px);
+            z-index: -1;
+        }
+        .badge {
+            display: inline-block;
+            background: #fff7ed;
+            border: 1px solid #ffedd5;
+            color: var(--brand-primary);
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+        h1 {
+            font-size: 4.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+        .gradient-text {
+            background: linear-gradient(to right, var(--brand-primary), #ea580c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-desc {
+            font-size: 1.25rem;
+            color: var(--text-gray);
+            max-width: 42rem;
+            margin: 0 auto 3rem auto;
+        }
+        .hero-actions { display: flex; gap: 1rem; justify-content: center; margin-bottom: 4rem; }
+        .zoho-badge { opacity: 0.7; border-top: 1px solid #e5e7eb; padding-top: 2rem; max-width: 200px; margin: 0 auto; }
+        .zoho-badge span { display: block; font-size: 0.75rem; color: #9ca3af; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; }
+        .zoho-badge strong { font-size: 1.25rem; color: #6b7280; }
+
+        /* --- Section: Why Us --- */
+        .split-section { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; padding: 6rem 0; }
+        .image-wrapper { position: relative; }
+        .image-bg {
+            position: absolute; inset: 0; background: var(--brand-primary); opacity: 0.08;
+            transform: rotate(3deg); border-radius: 2.5rem; z-index: -1;
+        }
+        .main-img {
+            width: 100%; height: auto; border-radius: 2.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            border: 4px solid white;
+        }
+        .feature-list li { display: flex; gap: 1rem; margin-bottom: 1.5rem; }
+        .icon-circle {
+            flex-shrink: 0; width: 2rem; height: 2rem; background: #dcfce7; color: #16a34a;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+        }
+
+        /* --- Section: Features --- */
+        .bg-surface { background-color: var(--brand-surface); padding: 6rem 0; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .card {
+            background: white; padding: 2.5rem; border-radius: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            border: 1px solid transparent; transition: 0.2s;
+        }
+        .card:hover { border-color: rgba(232, 141, 53, 0.3); transform: translateY(-2px); }
+        .card-dark { background: var(--brand-dark); color: white; position: relative; overflow: hidden; }
+        .card-icon { font-size: 2rem; margin-bottom: 1.5rem; background: #ffedd5; width: 3.5rem; height: 3.5rem; display: flex; align-items: center; justify-content: center; border-radius: 1rem; }
+        .card-dark .card-icon { background: rgba(255,255,255,0.1); }
+        .col-span-2 { grid-column: span 2; }
+
+        /* --- Section: Contact --- */
+        .form-wrapper {
+            background: var(--brand-surface); border: 1px solid rgba(232, 141, 53, 0.2);
+            border-radius: 2.5rem; padding: 3rem; max-width: 800px; margin: 0 auto;
+        }
+        .input-group { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+        label { display: block; font-size: 0.875rem; font-weight: 600; margin-bottom: 0.5rem; }
+        input, textarea {
+            width: 100%; padding: 1rem; border-radius: 1rem; border: 1px solid #e5e7eb;
+            font-family: inherit; margin-bottom: 1rem;
+        }
+        input:focus, textarea:focus { outline: 2px solid var(--brand-primary); border-color: transparent; }
+        textarea { resize: none; }
+
+        /* --- Footer --- */
         footer { background: var(--brand-dark); color: white; padding: 4rem 0 2rem 0; }
-        .footer-content { display: flex; justify-content: space-between; margin-bottom: 3rem; flex-wrap: wrap; gap: 2rem; }
-        .footer-links a { display: block; color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .footer-content { display: flex; justify-content: space-between; margin-bottom: 3rem; }
+        .footer-links a { margin-left: 2rem; color: rgba(255,255,255,0.7); font-size: 0.875rem; }
         .copyright { text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; color: rgba(255,255,255,0.5); font-size: 0.875rem; }
-        @media (max-width: 768px) { .nav-links { display: none; } .mobile-btn { display: block; } .footer-content { flex-direction: column; } }
+
+        /* --- Mobile Responsiveness --- */
+        @media (max-width: 768px) {
+            .nav-links { display: none; } /* Hide desktop menu */
+            .mobile-btn { display: block; }
+            h1 { font-size: 2.5rem; }
+            .hero-desc { font-size: 1.1rem; }
+            .hero-actions { flex-direction: column; }
+            .split-section { grid-template-columns: 1fr; gap: 3rem; }
+            .order-2 { order: 2; } .order-1 { order: 1; }
+            .grid-3 { grid-template-columns: 1fr; }
+            .col-span-2 { grid-column: auto; }
+            .input-group { grid-template-columns: 1fr; }
+            .form-wrapper { padding: 1.5rem; }
+            .footer-content { flex-direction: column; gap: 2rem; }
+            .footer-links a { margin-left: 0; margin-right: 1.5rem; display: inline-block; margin-bottom: 0.5rem; }
+        }
     </style>
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G9KZWPPT7V"></script>
-    <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-G9KZWPPT7V');</script>
-    <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init', '2689474284772231');fbq('track', 'PageView');</script>
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2689474284772231');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=2689474284772231&ev=PageView&noscript=1"
+    /></noscript>
 </head>
 <body>
 
     <nav>
         <div class="container nav-inner">
-            <a href="index.html" style="display:flex; align-items:center; gap:10px;">
+            <a href="#" style="display:flex; align-items:center; gap:10px;">
                 <img src="diyneza_logo.png" alt="Diyneza Logo" width="150" height="44">
             </a>
+            
             <div class="nav-links">
-                <a href="why-us.html" class="active-link">Why Us</a>
-                <a href="features.html">Features</a>
-                <a href="contact.html" class="btn btn-primary">Book a Demo</a>
+                <a href="#why-us">Why Us</a>
+                <a href="#features">Features</a>
+                <a href="#contact" class="btn btn-primary">Book a Demo</a>
             </div>
+            
             <div class="mobile-btn">
-                <a href="contact.html" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Book Demo</a>
+                <a href="#contact" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Book Demo</a>
             </div>
         </div>
     </nav>
 
-    <div class="container" style="padding-top: 10rem; padding-bottom: 6rem;">
-        <div style="text-align: center; margin-bottom: 4rem;">
-            <h1 style="font-size: 3.5rem; font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem;">Designed for <br/><span style="color:var(--brand-primary)">Restaurant Reality.</span></h1>
-            <p style="font-size: 1.2rem; color: var(--text-gray); max-width: 700px; margin: 0 auto;">
-                We didn't build this in a corporate office. We built this watching chaotic kitchens, frustrated waiters, and owners drowning in Excel sheets.
+    <header>
+        <div class="hero-blob"></div>
+        <div class="container">
+            <div class="badge">🚀 Launching Early 2026</div>
+            <h1>
+                Built for Chaos, <br/>
+                <span class="gradient-text">Designed for Calm.</span>
+            </h1>
+            <p class="hero-desc">
+                Restaurant management is messy. Diyneza organizes it. Stop using spreadsheets and start using the automated OS for modern restaurants.
             </p>
-        </div>
-
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
-            <div>
-                <img src="kitchen.webp" alt="Kitchen Chaos Solved" style="width: 100%; border-radius: 2.5rem; border: 4px solid white; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);">
+            
+            <div class="hero-actions">
+                <a href="#contact" class="btn btn-primary">Get Started for Free</a>
+                <a href="#features" class="btn btn-outline">See Features</a>
             </div>
-            <div>
-                <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 1.5rem;">The "Chaos" Problem</h2>
-                <p style="color: var(--text-gray); margin-bottom: 2rem;">
-                    In a busy restaurant, seconds matter. A system that requires 5 clicks to print a bill is a system that fails during rush hour.
-                </p>
-                <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--brand-primary);">The Diyneza Solution</h2>
-                <p style="color: var(--text-gray); margin-bottom: 2rem;">
-                    Diyneza is built on the principle of <strong>"One Click Actions"</strong>. We removed the clutter so your staff can focus on the food.
-                </p>
-                
-                <div style="background: white; padding: 2rem; border-radius: 1.5rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
-                    <ul style="list-style: none;">
-                        <li style="display: flex; gap: 1rem; margin-bottom: 1rem; align-items: center;">
-                            <span style="background: #dcfce7; color: #16a34a; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem;">✓</span>
-                            <strong>Zero-Training Interface</strong>
+
+            <div class="zoho-badge">
+                <span>Infrastructure Secured By</span>
+                <strong>ZOHO <span style="font-weight:300">Creator</span></strong>
+            </div>
+        </div>
+    </header>
+
+    <section id="why-us">
+        <div class="container">
+            <div class="split-section">
+                <div class="order-2">
+                    <h2 style="font-size:2.5rem; font-weight:700; margin-bottom:1.5rem; line-height:1.2;">We don't just track orders, we optimize profits.</h2>
+                    <p style="font-size:1.125rem; color:var(--text-gray); margin-bottom:2rem;">
+                        Most software just digitizes your paper tickets. Diyneza connects your kitchen to your inventory to your sales data in real-time.
+                    </p>
+                    <ul class="feature-list">
+                        <li>
+                            <div class="icon-circle">✓</div>
+                            <div>
+                                <strong style="display:block; font-size:1.1rem;">Zero setup friction</strong>
+                                <span style="color:var(--text-gray)">We handle the initial configuration based on your menu.</span>
+                            </div>
                         </li>
-                        <li style="display: flex; gap: 1rem; margin-bottom: 1rem; align-items: center;">
-                            <span style="background: #dcfce7; color: #16a34a; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem;">✓</span>
-                            <strong>Works on cheap Android tablets</strong>
-                        </li>
-                        <li style="display: flex; gap: 1rem; align-items: center;">
-                            <span style="background: #dcfce7; color: #16a34a; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem;">✓</span>
-                            <strong>No expensive server setups</strong>
+                        <li>
+                            <div class="icon-circle">✓</div>
+                            <div>
+                                <strong style="display:block; font-size:1.1rem;">Works on existing hardware</strong>
+                                <span style="color:var(--text-gray)">Runs in the browser on any tablet, laptop, or POS screen.</span>
+                            </div>
                         </li>
                     </ul>
                 </div>
+                <div class="image-wrapper order-1">
+                    <div class="image-bg"></div>
+                    <img src="kitchen.webp" alt="Smart Kitchen" class="main-img" width="600" height="800" fetchpriority="high" decoding="async">
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <section id="features" class="bg-surface">
+        <div class="container">
+            <div style="text-align:center; margin-bottom:4rem;">
+                <span style="color:var(--brand-primary); font-weight:700; letter-spacing:1px; font-size:0.875rem; text-transform:uppercase;">Powerful Modules</span>
+                <h2 style="font-size:2.5rem; font-weight:800; margin-top:0.5rem;">Everything is connected.</h2>
+            </div>
+
+            <div class="grid-3">
+                <div class="card col-span-2">
+                    <div class="card-icon">🍽️</div>
+                    <h3 style="font-size:1.5rem; font-weight:700; margin-bottom:1rem;">Kitchen Display System (KDS)</h3>
+                    <p style="color:var(--text-gray); font-size:1.1rem;">Ditch the noisy printers and lost tickets. Send orders directly from the waiter's tablet to screens in the kitchen. Color-coded timers ensure food goes out hot and on time.</p>
+                </div>
+
+                <div class="card card-dark">
+                    <div style="position:absolute; top:-20px; right:-20px; width:150px; height:150px; background:rgba(255,255,255,0.1); border-radius:50%; filter:blur(40px);"></div>
+                    <div class="card-icon">📱</div>
+                    <h3 style="font-size:1.5rem; font-weight:700; margin-bottom:1rem;">Owner's App</h3>
+                    <p style="color:#d1d5db;">Check live sales, void bills remotely, and see staff status from your phone, wherever you are.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">📦</div>
+                    <h3 style="font-size:1.25rem; font-weight:700; margin-bottom:0.5rem;">Live Inventory</h3>
+                    <p style="color:var(--text-gray);">Ingredients are auto-deducted as dishes are ordered. Low-stock alerts prevent 86'ing menu items.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">👥</div>
+                    <h3 style="font-size:1.25rem; font-weight:700; margin-bottom:0.5rem;">Staff Performance</h3>
+                    <p style="color:var(--text-gray);">Track shift hours and identify your top-selling waiters with detailed reports.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">💳</div>
+                    <h3 style="font-size:1.25rem; font-weight:700; margin-bottom:0.5rem;">Smart Billing</h3>
+                    <p style="color:var(--text-gray);">Split checks easily, manage tables, and generate compliant digital invoices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" style="padding: 6rem 0;">
+        <div class="container">
+            <div class="form-wrapper">
+                <div style="text-align:center; margin-bottom:2rem;">
+                    <h2 style="font-size:2.25rem; font-weight:700; margin-bottom:1rem;">Ready to upgrade?</h2>
+                    <p style="color:var(--text-gray);">Fill in the details below and our team will set up a personalized demo.</p>
+                </div>
+
+                <div id="form-success" style="display:none; background:#dcfce7; color:#166534; padding:1.5rem; border-radius:1rem; text-align:center; margin-bottom:2rem;">
+                    <strong>Application Received! 🎉</strong><br>
+                    Thank you. Our team will contact you shortly.
+                </div>
+
+                <form id="submit-to-google-sheet">
+                    <div class="input-group">
+                        <div>
+                            <label>Your Name *</label>
+                            <input type="text" name="person-name" placeholder="John Doe" required>
+                        </div>
+                        <div>
+                            <label>Phone Number *</label>
+                            <input type="tel" name="phone" placeholder="+91 98765 43210" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <div>
+                            <label>Restaurant Name *</label>
+                            <input type="text" name="restaurant-name" placeholder="The Tasty Spoon" required>
+                        </div>
+                        <div>
+                            <label>Email Address *</label>
+                            <input type="email" name="email" placeholder="john@restaurant.com" required>
+                        </div>
+                    </div>
+
+                    <label>City *</label>
+                    <input type="text" name="city" placeholder="Mumbai, Delhi, etc." required>
+
+                    <label>Specific Requirements</label>
+                    <textarea name="requirements" rows="3" placeholder="We need help primarily with..."></textarea>
+
+                    <button type="submit" id="submit-btn" class="btn btn-primary" style="width:100%; display:flex; justify-content:center; align-items:center;">
+                        <span id="btn-text">Request Demo Setup</span>
+                        <div id="btn-loader" class="loader" style="display:none; margin-left:10px;"></div>
+                    </button>
+                    <p style="text-align:center; font-size:0.75rem; color:#9ca3af; margin-top:1rem;">We respect your privacy. Your data is secure.</p>
+                </form>
+            </div>
+        </div>
+    </section>
 
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div style="flex:1; min-width: 250px; margin-bottom: 2rem;">
+                <div>
                     <span style="font-size:2rem; font-weight:700; letter-spacing:-1px;">DIYNEZA</span>
-                    <p style="color:rgba(255,255,255,0.7); margin-top:0.5rem; margin-bottom: 1.5rem;">Restaurant business, made easy.</p>
-                    <div style="display:flex; gap: 1.5rem; align-items: center;">
-                        <a href="#" target="_blank" aria-label="Instagram" style="margin:0; display:flex;">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:rgba(255,255,255,0.8);"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                        </a>
-                        <a href="#" target="_blank" aria-label="Facebook" style="margin:0; display:flex;">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:rgba(255,255,255,0.8);"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-                        </a>
-                        <a href="#" target="_blank" aria-label="Twitter" style="margin:0; display:flex;">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:rgba(255,255,255,0.8);"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
-                        </a>
-                        <a href="#" target="_blank" aria-label="LinkedIn" style="margin:0; display:flex;">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:rgba(255,255,255,0.8);"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                        </a>
-                    </div>
+                    <p style="color:rgba(255,255,255,0.7); margin-top:0.5rem;">Restaurant business, made easy.</p>
                 </div>
-                <div class="footer-links" style="display:flex; flex-direction:column; align-items:flex-start; gap: 0.8rem;">
-                    <a href="why-us.html" style="margin:0;">Why Us</a>
-                    <a href="features.html" style="margin:0;">Features</a>
-                    <a href="#" style="margin:0;">Privacy Policy</a>
-                    <div style="margin-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem; width: 100%;">
-                        <span style="color:rgba(255,255,255,0.5); font-size:0.8rem; display:block; margin-bottom:0.2rem;">Support Email:</span>
-                        <a href="mailto:support@diyneza.online" style="margin:0; color: #E88D35; font-weight: 600;">support@diyneza.online</a>
-                    </div>
+                <div class="footer-links">
+                    <a href="#why-us">Why Us</a>
+                    <a href="#features">Features</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="mailto:support@diyneza.com">Contact</a>
                 </div>
             </div>
             <div class="copyright">
@@ -132,6 +420,43 @@
             </div>
         </div>
     </footer>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G9KZWPPT7V"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-G9KZWPPT7V');
+    </script>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzcf_haMUl6hfzFv8isA9i-D2ZFoVGi4AU2OgVM57qHV-2KP9QtKk0AsGuETVLoculT/exec';
+        const form = document.forms['submit-to-google-sheet'];
+        const successMessage = document.getElementById('form-success');
+        const submitBtn = document.getElementById('submit-btn');
+        const btnText = document.getElementById('btn-text');
+        const btnLoader = document.getElementById('btn-loader');
+
+        form.addEventListener('submit', e => {
+          e.preventDefault();
+          submitBtn.disabled = true;
+          btnText.textContent = 'Sending...';
+          btnLoader.style.display = 'block';
+
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                form.style.display = 'none';
+                successMessage.style.display = 'block';
+                form.reset(); 
+            })
+            .catch(error => {
+                 submitBtn.disabled = false;
+                 btnText.textContent = 'Request Demo Setup';
+                 btnLoader.style.display = 'none';
+                 alert('Error sending details. Please try again later.');
+            });
+        });
+    </script>
 
 </body>
 </html>
