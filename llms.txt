@@ -1,0 +1,6 @@
+Website Name: diyneza
+Version: 1.0
+Author: Meghansh Agarwal
+Purpose: This file is for system or crawler use.
+Created On: 2026
+Notes: This is a plain text file for informational purposes. No sensitive data included.
