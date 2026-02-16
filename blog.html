@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Restaurant Management Blog | Insights by Diyneza</title>
+    <meta name="description" content="Expert tips on restaurant operations, POS technology, and compliance. Covering markets from India to Germany.">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.diyneza.online/blog.html">
+    <meta property="og:title" content="Restaurant Management Blog | Diyneza">
+    <meta property="og:description" content="Read the latest insights on cloud POS, inventory control, and restaurant growth strategies.">
+    <meta property="og:image" content="https://www.diyneza.online/blog-cover.jpg">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Restaurant Management Blog | Diyneza">
+    <meta name="twitter:description" content="Expert tips on restaurant operations and POS technology.">
+    <meta name="twitter:image" content="https://www.diyneza.online/blog-cover.jpg">
+
+    <link rel="canonical" href="https://www.diyneza.online/blog.html">
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap"></noscript>
+
+    <style>
+        :root { --brand-dark: #4E3629; --brand-primary: #E88D35; --brand-light: #FFFDF5; --brand-surface: #FDF6EB; --text-gray: #4b5563; --white: #ffffff; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--brand-light); color: var(--brand-dark); line-height: 1.6; }
+        a { text-decoration: none; color: inherit; transition: 0.2s; }
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
+
+        /* Buttons & Nav */
+        .btn-primary { background-color: var(--brand-primary); color: var(--white); padding: 0.875rem 2rem; border-radius: 99px; font-weight: 700; display: inline-block; }
+        .btn-primary:hover { background-color: #d67d26; transform: translateY(-2px); }
+        nav { position: fixed; width: 100%; z-index: 50; top: 0; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(232, 141, 53, 0.1); }
+        .nav-inner { display: flex; justify-content: space-between; align-items: center; height: 80px; }
+        .nav-links { display: flex; gap: 2.5rem; align-items: center; font-weight: 500; font-size: 0.95rem; }
+        .nav-links a:hover { color: var(--brand-primary); }
+        .mobile-btn { display: none; }
+
+        /* Blog Header */
+        .blog-header { padding-top: 10rem; padding-bottom: 4rem; text-align: center; }
+        .blog-header h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 1rem; }
+        .blog-header p { font-size: 1.25rem; color: var(--text-gray); max-width: 600px; margin: 0 auto; }
+
+        /* Blog Grid */
+        .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; padding-bottom: 6rem; }
+        .blog-card { background: white; border-radius: 1.5rem; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.02); transition: 0.3s ease; border: 1px solid transparent; display: flex; flex-direction: column; }
+        .blog-card:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); border-color: rgba(232, 141, 53, 0.2); }
+        
+        .blog-thumb { height: 240px; background-color: #FED7AA; position: relative; overflow: hidden; }
+        /* IMPORTANT FOR IMAGE SUBMISSION: Alt tags on these images must be keyword rich */
+        .blog-thumb img { width: 100%; height: 100%; object-fit: cover; transition: 0.3s; }
+        .blog-card:hover .blog-thumb img { transform: scale(1.05); }
+        
+        .blog-content { padding: 2rem; flex: 1; display: flex; flex-direction: column; }
+        .blog-tag { background: var(--brand-surface); color: var(--brand-primary); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; padding: 0.4rem 0.8rem; border-radius: 6px; display: inline-block; margin-bottom: 1rem; width: fit-content; }
+        .blog-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.75rem; line-height: 1.3; }
+        .blog-excerpt { color: var(--text-gray); font-size: 0.95rem; margin-bottom: 1.5rem; flex: 1; }
+        .read-more { color: var(--brand-primary); font-weight: 700; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem; }
+
+        /* Footer */
+        footer { background: var(--brand-dark); color: white; padding: 4rem 0 2rem 0; }
+        .footer-content { display: flex; justify-content: space-between; margin-bottom: 3rem; }
+        .footer-links a { color: rgba(255,255,255,0.7); display: block; margin-bottom: 0.5rem; }
+        .copyright { text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; color: rgba(255,255,255,0.5); font-size: 0.875rem; }
+
+        @media (max-width: 1024px) { .blog-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) { 
+            .nav-links { display: none; } .mobile-btn { display: block; }
+            .blog-grid { grid-template-columns: 1fr; }
+            .blog-header h1 { font-size: 2.5rem; }
+            .footer-content { flex-direction: column; gap: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container nav-inner">
+            <a href="index.html" style="display:flex; align-items:center; gap:10px;">
+                <img src="diyneza_logo.png" alt="Diyneza Logo" width="150" height="44">
+            </a>
+            <div class="nav-links">
+                <a href="why-us.html">Why Us</a>
+                <a href="features.html">Features</a>
+                <a href="blog.html" style="color:var(--brand-primary);">Blog</a>
+                <a href="contact.html" class="btn-primary">Book a Demo</a>
+            </div>
+            <div class="mobile-btn">
+                <a href="contact.html" class="btn-primary" style="font-size: 0.9rem;">Book Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="blog-header">
+        <div class="container">
+            <h1>Restaurant Growth Blog</h1>
+            <p>Strategies for modern restaurants in India, Germany, and beyond.</p>
+        </div>
+    </header>
+
+    <section class="container">
+        <div class="blog-grid">
+            
+            <a href="single-blog.html" class="blog-card">
+                <div class="blog-thumb">
+                    <div style="width:100%; height:100%; background: #FFE4C4; display:flex; align-items:center; justify-content:center; color:#E88D35; font-size:3rem;">🇩🇪</div>
+                </div>
+                <div class="blog-content">
+                    <span class="blog-tag">Global Market</span>
+                    <h2 class="blog-title">Why German Restaurants are Switching to Cloud POS</h2>
+                    <p class="blog-excerpt">Understanding the shift in the European market and what Indian businesses can learn from German efficiency.</p>
+                    <span class="read-more">Read Article →</span>
+                </div>
+            </a>
+
+            <a href="single-blog.html" class="blog-card">
+                <div class="blog-thumb">
+                    <div style="width:100%; height:100%; background: #FFD1DC; display:flex; align-items:center; justify-content:center; color:#E88D35; font-size:3rem;">📦</div>
+                </div>
+                <div class="blog-content">
+                    <span class="blog-tag">Inventory</span>
+                    <h2 class="blog-title">How to Reduce Food Waste in Your Kitchen</h2>
+                    <p class="blog-excerpt">Food cost killing your profits? Learn how recipe-based inventory tracking can stop leakage.</p>
+                    <span class="read-more">Read Article →</span>
+                </div>
+            </a>
+
+            <a href="single-blog.html" class="blog-card">
+                <div class="blog-thumb">
+                    <div style="width:100%; height:100%; background: #E0F2FE; display:flex; align-items:center; justify-content:center; color:#E88D35; font-size:3rem;">☁️</div>
+                </div>
+                <div class="blog-content">
+                    <span class="blog-tag">Technology</span>
+                    <h2 class="blog-title">5 Reasons Cloud-Based Billing Beats Offline Software</h2>
+                    <p class="blog-excerpt">Why moving your restaurant POS to the cloud saves money, prevents theft, and gives you freedom.</p>
+                    <span class="read-more">Read Article →</span>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div style="flex:1; margin-bottom: 2rem;">
+                    <span style="font-size:2rem; font-weight:700;">DIYNEZA</span>
+                    <p style="color:rgba(255,255,255,0.7);">Restaurant business, made easy.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="why-us.html">Why Us</a>
+                    <a href="features.html">Features</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="mailto:support@diyneza.online" style="color: #E88D35; margin-top:10px;">support@diyneza.online</a>
+                </div>
+            </div>
+            <div class="copyright">&copy; 2026 Diyneza Technologies. All rights reserved.</div>
+        </div>
+    </footer>
+
+</body>
+</html>
