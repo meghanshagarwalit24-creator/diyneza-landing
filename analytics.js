@@ -6,10 +6,12 @@
   };
 
   window.diynezaTrackEvent = trackEvent;
+  const getFormId = (form) => form?.dataset?.analyticsForm || form?.id || 'unknown_form';
+
   window.diynezaTrackFormEvent = (eventName, form, extra = {}) => {
     if (!eventName || !form) return;
     trackEvent(eventName, {
-      form_id: form.id || 'lead_form',
+      form_id: getFormId(form),
       page_path: window.location.pathname,
       ...extra
     });
@@ -49,7 +51,7 @@
       if (started) return;
       started = true;
       trackEvent('form_start', {
-        form_id: form.id || 'lead_form',
+        form_id: getFormId(form),
         page_path: window.location.pathname
       });
     };
