@@ -21,11 +21,7 @@
     const target = event.target.closest(ctaSelector);
     if (!target) return;
 
-    const isFormSubmit = target.closest('form') && (
-      (target.tagName === 'BUTTON' && (!target.type || target.type === 'submit')) ||
-      (target.tagName === 'INPUT' && target.type === 'submit')
-    );
-    if (isFormSubmit) return;
+    if (target.closest('form')) return;
 
     const ctaText = (target.textContent || '').trim();
     const ctaHref = target.getAttribute('href') || '';
