@@ -8,6 +8,14 @@
   };
 
   window.diynezaTrackEvent = trackEvent;
+  window.diynezaTrackFormEvent = (eventName, form, extra = {}) => {
+    if (!eventName || !form) return;
+    trackEvent(eventName, {
+      form_id: form.id || 'lead_form',
+      page_path: window.location.pathname,
+      ...extra
+    });
+  };
 
   const ctaSelector = '.btn, .btn-primary, .btn-outline';
 
@@ -47,8 +55,8 @@
     };
 
     fields.forEach((field) => {
-      field.addEventListener('focus', handleStart, { once: true });
-      field.addEventListener('change', handleStart, { once: true });
+      field.addEventListener('focus', handleStart);
+      field.addEventListener('change', handleStart);
     });
   }
 })();
