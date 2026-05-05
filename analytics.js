@@ -44,8 +44,8 @@
     trackEvent('cta_click', params);
   });
 
-  const form = document.getElementById('submit-to-google-sheet');
-  if (form) {
+  const forms = document.querySelectorAll('[data-analytics-form]');
+  forms.forEach((form) => {
     const fields = form.querySelectorAll('input, textarea, select');
     let started = false;
 
@@ -62,5 +62,5 @@
       field.addEventListener('focus', handleStart);
       field.addEventListener('change', handleStart);
     });
-  }
+  });
 })();
