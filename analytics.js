@@ -1,9 +1,7 @@
 (() => {
-  window.dataLayer = window.dataLayer || [];
-  window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
-
   const trackEvent = (name, params = {}) => {
     if (!name) return;
+    if (typeof window.gtag !== 'function') return;
     window.gtag('event', name, params);
   };
 
@@ -23,15 +21,21 @@
     const target = event.target.closest(ctaSelector);
     if (!target) return;
 
-    const isFormSubmit = target.closest('form') && (target.tagName === 'BUTTON' || target.getAttribute('type') === 'submit');
+    const isFormSubmit = target.closest('form') && (
+      (target.tagName === 'BUTTON' && (!target.type || target.type === 'submit')) ||
+      (target.tagName === 'INPUT' && target.type === 'submit')
+    );
     if (isFormSubmit) return;
 
     const ctaText = (target.textContent || '').trim();
     const ctaHref = target.getAttribute('href') || '';
     let ctaArea = 'body';
 
-    if (target.closest('nav')) ctaArea = 'nav';
-    if (target.closest('footer')) ctaArea = 'footer';
+    if (target.closest('nav')) {
+      ctaArea = 'nav';
+    } else if (target.closest('footer')) {
+      ctaArea = 'footer';
+    }
 
     const params = { page_path: window.location.pathname, cta_area: ctaArea };
     if (ctaText) params.cta_text = ctaText;
