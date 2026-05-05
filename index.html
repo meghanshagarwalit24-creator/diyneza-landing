@@ -596,19 +596,32 @@
         const btnText = document.getElementById('btn-text');
         const btnLoader = document.getElementById('btn-loader');
 
+        const reportFormEvent = (eventName, extra = {}) => {
+          if (typeof window.diynezaTrackEvent === 'function') {
+            window.diynezaTrackEvent(eventName, {
+              form_id: form.id || 'lead_form',
+              page_path: window.location.pathname,
+              ...extra
+            });
+          }
+        };
+
         form.addEventListener('submit', e => {
           e.preventDefault();
+          reportFormEvent('form_submit');
           submitBtn.disabled = true;
           btnText.textContent = 'Sending...';
           btnLoader.style.display = 'block';
 
           fetch(scriptURL, { method: 'POST', body: new FormData(form)})
             .then(response => {
+                reportFormEvent('form_submit_success');
                 form.style.display = 'none';
                 successMessage.style.display = 'block';
                 form.reset(); 
             })
             .catch(error => {
+                 reportFormEvent('form_submit_error', { error_message: error?.message || 'unknown' });
                  submitBtn.disabled = false;
                  btnText.textContent = 'Request Demo Setup';
                  btnLoader.style.display = 'none';
@@ -617,5 +630,7 @@
         });
     </script>
 
+    <script defer src="analytics.js"></script>
+ 
 </body>
 </html>
