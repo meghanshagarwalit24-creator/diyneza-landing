@@ -168,6 +168,8 @@
 
         .content-section { padding: 6rem 0; }
         .seo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+        .client-logos { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 2rem; align-items: center; justify-items: center; }
+        .client-logos img { max-height: 64px; width: auto; max-width: 160px; object-fit: contain; }
         .faq-item { background: white; padding: 1.5rem; border-radius: 1rem; margin-bottom: 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
         .faq-question { font-weight: 700; color: var(--brand-dark); margin-bottom: 0.5rem; display: block; }
         .faq-answer { color: var(--text-gray); font-size: 0.95rem; }
@@ -206,6 +208,8 @@
             .seo-grid { grid-template-columns: 1fr; gap: 2rem; }
             .order-2 { order: 2; } .order-1 { order: 1; }
             .grid-3 { grid-template-columns: 1fr; } .col-span-2 { grid-column: auto; }
+            .client-logos { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
+            .client-logos img { max-height: 52px; }
             .input-group { grid-template-columns: 1fr; } .form-wrapper { padding: 1.5rem; }
             .footer-content { flex-direction: column; gap: 2rem; }
             .footer-links a { margin-left: 0; margin-right: 1.5rem; display: inline-block; margin-bottom: 0.5rem; }
@@ -399,6 +403,22 @@
                     <h3 style="font-size:1.25rem; font-weight:700; margin-bottom:0.5rem;">Smart Billing</h3>
                     <p style="color:var(--text-gray);"><strong>Restaurant billing and inventory software</strong> that splits checks easily and manages table transfers.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div style="text-align:center; margin-bottom:2.5rem;">
+                <span style="color:var(--brand-primary); font-weight:700; letter-spacing:1px; font-size:0.875rem; text-transform:uppercase;">Our Clients</span>
+                <h2 style="font-size:2rem; font-weight:700; margin-top:0.5rem;">Trusted by leading restaurants</h2>
+            </div>
+            <div class="client-logos">
+                <img src="Untitled design.png" alt="Client logo 1" loading="lazy" decoding="async">
+                <img src="Untitled design (1).png" alt="Client logo 2" loading="lazy" decoding="async">
+                <img src="Untitled design (2).png" alt="Client logo 3" loading="lazy" decoding="async">
+                <img src="Untitled design (3).png" alt="Client logo 4" loading="lazy" decoding="async">
+                <img src="Untitled design (4).png" alt="Client logo 5" loading="lazy" decoding="async">
             </div>
         </div>
     </section>
